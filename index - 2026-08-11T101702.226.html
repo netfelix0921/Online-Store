@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habi Home — Handwoven blankets, mats and baskets from Philippine looms</title>
+<meta name="description" content="Handwoven blankets, banig mats, abaca baskets and table linens made on Philippine looms. Ships from Quezon City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --ink:#16181A;
+  --indigo:#24365C;
+  --indigo-deep:#1A2743;
+  --abaca:#E6E1D3;
+  --paper:#F3EFE6;
+  --madder:#8C3A2E;
+  --gold:#C8922A;
+  --line:rgba(22,24,26,.16);
+  --line-soft:rgba(22,24,26,.08);
+  --display:"Fraunces",Georgia,serif;
+  --body:"Karla","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --gut:clamp(1.25rem,4vw,3.5rem);
+  --shadow:0 1px 0 var(--line-soft),0 18px 40px -28px rgba(22,24,26,.5);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1220px;margin:0 auto;padding:0 var(--gut)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+h1,h2,h3{font-family:var(--display);font-weight:400;font-variation-settings:"opsz" 96,"SOFT" 20,"WONK" 1;
+  letter-spacing:-.015em;line-height:1.02;margin:0}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;opacity:.62;margin:0}
+
+/* ---------- selvedge divider: the banding of an inabel edge ---------- */
+.selvedge{height:9px;width:100%;
+  background:repeating-linear-gradient(90deg,
+    var(--indigo) 0 14px, transparent 14px 20px,
+    var(--madder) 20px 24px, transparent 24px 34px,
+    var(--indigo) 34px 40px, transparent 40px 52px,
+    var(--gold) 52px 55px, transparent 55px 70px);
+  opacity:.85}
+.selvedge--tight{height:6px;background-size:44px 100%}
+
+/* ---------- header ---------- */
+.head{position:sticky;top:0;z-index:40;background:rgba(243,239,230,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.head__in{display:flex;align-items:center;gap:1.5rem;height:66px}
+.mark{font-family:var(--display);font-size:1.35rem;letter-spacing:-.02em;white-space:nowrap}
+.mark b{font-weight:600}
+.mark i{font-style:italic;opacity:.55}
+.nav{display:flex;gap:1.6rem;margin-left:auto;font-size:.9rem}
+.nav a{padding:.4rem 0;border-bottom:1px solid transparent}
+.nav a:hover{border-bottom-color:var(--ink)}
+.cartbtn{display:flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.78rem;
+  letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);
+  padding:.55rem .85rem;border-radius:2px;transition:background .18s,color .18s}
+.cartbtn:hover{background:var(--ink);color:var(--paper)}
+.cartbtn__n{min-width:1.35rem;height:1.35rem;display:grid;place-items:center;border-radius:50%;
+  background:var(--madder);color:#fff;font-size:.72rem}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--indigo-deep);color:var(--abaca);overflow:hidden}
+.loom{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.loom line{stroke:var(--abaca);stroke-width:.6;opacity:.28}
+.loom .weft{stroke-dasharray:1400;stroke-dashoffset:1400;animation:thread 1.5s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes thread{to{stroke-dashoffset:0}}
+.hero__in{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);
+  align-items:center;padding:clamp(3.5rem,9vw,6.5rem) 0}
+.hero .eyebrow{color:var(--gold);opacity:1}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.6rem);margin:1.1rem 0 0;color:#F7F3E9}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{max-width:36ch;margin:1.4rem 0 0;color:rgba(230,225,211,.78);font-size:1.03rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.1rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:2px;font-weight:700;font-size:.92rem;
+  transition:transform .16s,background .16s,color .16s}
+.btn--fill{background:var(--gold);color:var(--indigo-deep)}
+.btn--fill:hover{transform:translateY(-2px)}
+.btn--ghost{border:1px solid rgba(230,225,211,.4);color:var(--abaca)}
+.btn--ghost:hover{background:rgba(230,225,211,.12)}
+.hero__card{background:var(--paper);color:var(--ink);padding:.75rem;box-shadow:var(--shadow);
+  transform:rotate(-1.4deg)}
+.hero__card figcaption{display:flex;justify-content:space-between;align-items:baseline;
+  padding:.7rem .35rem .2rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.05em}
+
+/* ---------- shop ---------- */
+.shop{padding:clamp(3rem,7vw,5rem) 0 clamp(4rem,8vw,6rem)}
+.shop__top{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-end;justify-content:space-between;
+  padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
+.shop h2{font-size:clamp(1.9rem,4vw,2.9rem)}
+.filters{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.5rem .85rem;border:1px solid var(--line);border-radius:2px;transition:.16s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--indigo);border-color:var(--indigo);color:var(--abaca)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:1px}
+.card{background:var(--paper);padding:1.1rem;display:flex;flex-direction:column;
+  animation:rise .35s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+.card__art{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--abaca)}
+.card__art svg{width:100%;height:100%;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.card:hover .card__art svg{transform:scale(1.06)}
+.tag{position:absolute;top:.6rem;left:.6rem;font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--madder);color:#fff;padding:.25rem .45rem}
+.card h3{font-size:1.12rem;margin:.9rem 0 .25rem;line-height:1.2}
+.card__meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;opacity:.6}
+.card__foot{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  margin-top:auto;padding-top:1rem}
+.price{font-family:var(--mono);font-size:1rem;font-weight:500}
+.price s{opacity:.4;font-size:.8rem;margin-right:.35rem}
+.add{border:1px solid var(--ink);padding:.5rem .85rem;border-radius:2px;font-size:.82rem;font-weight:700;
+  transition:.16s}
+.add:hover{background:var(--ink);color:var(--paper)}
+.empty{grid-column:1/-1;background:var(--paper);padding:3rem 1rem;text-align:center;font-family:var(--mono);
+  font-size:.82rem;letter-spacing:.06em;opacity:.6}
+
+/* ---------- process ---------- */
+.made{background:var(--abaca);padding:clamp(3rem,7vw,5rem) 0}
+.made h2{font-size:clamp(1.7rem,3.4vw,2.4rem);max-width:18ch}
+.made__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:2.5rem}
+.step__k{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  padding-bottom:.6rem;border-bottom:2px solid var(--indigo);display:inline-block}
+.step h3{font-size:1.2rem;margin:1rem 0 .5rem}
+.step p{margin:0;font-size:.94rem;opacity:.78}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink);color:var(--abaca);padding:clamp(2.5rem,5vw,4rem) 0 2rem}
+.foot__grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:2rem}
+.foot h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  margin:0 0 1rem;opacity:.55;font-weight:400}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:.92rem}
+.foot a:hover{color:var(--gold)}
+.foot__note{margin-top:3rem;padding-top:1.25rem;border-top:1px solid rgba(230,225,211,.18);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;opacity:.55}
+
+/* ---------- cart drawer ---------- */
+.scrim{position:fixed;inset:0;background:rgba(22,24,26,.5);opacity:0;visibility:hidden;
+  transition:.25s;z-index:50}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,100%);background:var(--paper);
+  transform:translateX(101%);transition:transform .3s cubic-bezier(.2,.7,.3,1);z-index:60;
+  display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.drawer__head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem var(--gut);
+  border-bottom:1px solid var(--line)}
+.drawer__head h2{font-size:1.4rem}
+.x{font-size:1.5rem;line-height:1;padding:.25rem .5rem}
+.drawer__body{flex:1;overflow-y:auto;padding:0 var(--gut)}
+.line{display:grid;grid-template-columns:56px 1fr auto;gap:.9rem;align-items:center;
+  padding:1.1rem 0;border-bottom:1px solid var(--line-soft)}
+.line__art{width:56px;height:56px;overflow:hidden;background:var(--abaca)}
+.line__n{font-size:.95rem;font-weight:700;line-height:1.25}
+.qty{display:flex;align-items:center;gap:.5rem;margin-top:.4rem;font-family:var(--mono);font-size:.8rem}
+.qty button{width:22px;height:22px;border:1px solid var(--line);line-height:1;border-radius:2px}
+.qty button:hover{background:var(--ink);color:var(--paper)}
+.line__p{font-family:var(--mono);font-size:.88rem}
+.drawer__foot{padding:1.25rem var(--gut) 1.75rem;border-top:1px solid var(--line)}
+.total{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.95rem;margin-bottom:.35rem}
+.total--big{font-size:1.15rem;font-weight:500;margin:.6rem 0 1rem}
+.checkout{width:100%;background:var(--indigo);color:var(--abaca);padding:1rem;border-radius:2px;
+  font-weight:700;transition:.16s}
+.checkout:hover{background:var(--indigo-deep)}
+.checkout[disabled]{opacity:.4;cursor:not-allowed}
+
+.toast{position:fixed;left:50%;bottom:2rem;transform:translate(-50%,140%);background:var(--ink);
+  color:var(--paper);padding:.8rem 1.4rem;border-radius:2px;font-size:.88rem;z-index:70;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.toast.show{transform:translate(-50%,0)}
+
+@media(max-width:860px){
+  .hero__in{grid-template-columns:1fr}
+  .hero__card{max-width:320px}
+  .nav{display:none}
+  .foot__grid{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important}
+  .loom .weft{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap head__in">
+    <a class="mark" href="/"><b>Habi</b> <i>Home</i></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#made">How it's made</a>
+      <a href="makers.html">Our weavers</a>
+      <a href="care.html">Care</a>
+    </nav>
+    <button class="cartbtn" id="openCart" aria-label="Open cart">
+      Cart <span class="cartbtn__n" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== hero: the loom ===== -->
+<section class="hero">
+  <svg class="loom" id="loom" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 1400 600"></svg>
+  <div class="wrap hero__in">
+    <div>
+      <p class="eyebrow">Ilocos · Samar · Kalinga → Quezon City</p>
+      <h1>Cloth that took<br>three weeks<br>and <em>two hands.</em></h1>
+      <p>Blankets, mats and baskets woven on wooden looms in the provinces, then sent to your door. Every piece is counted, signed and slightly imperfect.</p>
+      <div class="cta">
+        <a class="btn btn--fill" href="#shop">Shop the collection</a>
+        <a class="btn btn--ghost" href="makers.html">Meet the weavers</a>
+      </div>
+    </div>
+    <figure class="hero__card" id="heroCard">
+      <div class="card__art" id="heroArt"></div>
+      <figcaption><span>Binakol Throw · Ilocos Norte</span><span>₱2,850</span></figcaption>
+    </figure>
+  </div>
+</section>
+<div class="selvedge"></div>
+
+<!-- ===== shop ===== -->
+<main id="shop" class="shop">
+  <div class="wrap">
+    <div class="shop__top">
+      <div>
+        <p class="eyebrow">In stock now</p>
+        <h2>Eight weaves, ready to ship</h2>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<div class="selvedge selvedge--tight"></div>
+
+<!-- ===== how it's made ===== -->
+<section id="made" class="made">
+  <div class="wrap">
+    <p class="eyebrow">From thread to doorstep</p>
+    <h2>Four stages, none of them fast</h2>
+    <div class="made__grid">
+      <article class="step"><span class="step__k">Stage 01 · Dye</span>
+        <h3>Indigo and madder</h3>
+        <p>Cotton is dipped in tayum indigo up to twelve times. The colour deepens with each pass and never quite matches the last batch.</p></article>
+      <article class="step"><span class="step__k">Stage 02 · Warp</span>
+        <h3>Counting the threads</h3>
+        <p>Around 1,200 warp threads are strung by hand across the loom. This alone takes two days and cannot be undone halfway.</p></article>
+      <article class="step"><span class="step__k">Stage 03 · Weave</span>
+        <h3>Foot on the pedal</h3>
+        <p>A weaver moves through roughly 20cm a day. A double-width blanket is three weeks of mornings.</p></article>
+      <article class="step"><span class="step__k">Stage 04 · Finish</span>
+        <h3>Washed and signed</h3>
+        <p>Each piece is washed twice, hemmed, then signed on the label by the person who made it.</p></article>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="mark" style="font-size:1.5rem"><b>Habi</b> <i>Home</i></p>
+        <p style="max-width:32ch;opacity:.7;font-size:.92rem">Handwoven textiles and baskets from Philippine looms. Studio in Quezon City, open by appointment.</p>
+      </div>
+      <div><h4>Shop</h4><ul>
+        <li><a href="#shop">Blankets</a></li><li><a href="#shop">Mats</a></li>
+        <li><a href="#shop">Baskets</a></li><li><a href="#shop">Table</a></li></ul></div>
+      <div><h4>Help</h4><ul>
+        <li><a href="shipping.html">Shipping</a></li><li><a href="returns.html">Returns</a></li>
+        <li><a href="care.html">Washing guide</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Follow</h4><ul>
+        <li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li>
+        <li><a href="#">Newsletter</a></li></ul></div>
+    </div>
+    <div class="foot__note">
+      <span>© 2026 Habi Home · Sample storefront</span>
+      <span>GCash · Maya · COD Metro Manila</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== cart ===== -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="drawer__head"><h2>Your cart</h2><button class="x" id="closeCart" aria-label="Close cart">&times;</button></div>
+  <div class="drawer__body" id="cartBody"></div>
+  <div class="drawer__foot">
+    <div class="total"><span>Subtotal</span><span id="sub">₱0</span></div>
+    <div class="total"><span>Shipping</span><span id="ship">—</span></div>
+    <div class="total total--big"><span>Total</span><span id="tot">₱0</span></div>
+    <button class="checkout" id="checkout" disabled>Checkout</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- palette ---------- */
+const C = {indigo:"#24365C", deep:"#1A2743", abaca:"#E6E1D3", paper:"#F3EFE6",
+           madder:"#8C3A2E", gold:"#C8922A", ink:"#16181A", moss:"#4A5A3C"};
+
+/* ---------- woven pattern generator (stands in for photography) ---------- */
+function weave(kind, p){
+  const [bg,a,b] = p, S = 120; let g = "";
+  if(kind==="binakol"){
+    for(let ty=0; ty<2; ty++) for(let tx=0; tx<2; tx++){
+      const ox=tx*60, oy=ty*60;
+      for(let i=0;i<7;i++){
+        const s=60-i*8.6, o=(60-s)/2;
+        g+=`<rect x="${ox+o}" y="${oy+o}" width="${s}" height="${s}" fill="${i%2?a:b}"/>`;
+      }
+    }
+  } else if(kind==="stripe"){
+    const w=[9,3,2,14,4,2,9,3,16,5,3,10];
+    let x=0,i=0; while(x<S){const t=w[i%w.length];
+      g+=`<rect x="${x}" y="0" width="${t}" height="${S}" fill="${i%3===0?a:(i%3===1?b:bg)}"/>`; x+=t;i++;}
+  } else if(kind==="banig"){
+    const c=10; for(let y=0;y<S/c;y++) for(let x=0;x<S/c;x++){
+      const on=(x+y)%2===0;
+      g+=`<rect x="${x*c+.7}" y="${y*c+.7}" width="${c-1.4}" height="${c-1.4}" rx="1"
+            fill="${on?a:b}" opacity="${on?1:.9}"/>`;}
+  } else if(kind==="twill"){
+    for(let i=-12;i<24;i++)
+      g+=`<rect x="${i*10}" y="-40" width="5.5" height="220" fill="${i%3===0?b:a}"
+            transform="rotate(32 60 60)" opacity="${i%3===0?1:.85}"/>`;
+  } else { /* check */
+    for(let i=0;i<5;i++){
+      g+=`<rect x="${i*26+4}" y="0" width="11" height="${S}" fill="${a}" opacity=".92"/>`;
+      g+=`<rect x="0" y="${i*26+4}" width="${S}" height="11" fill="${b}" opacity=".72"/>`;}
+  }
+  /* weft texture over everything so it reads as cloth, not graphics */
+  let tex=""; for(let y=0;y<S;y+=3) tex+=`<line x1="0" y1="${y}" x2="${S}" y2="${y}"/>`;
+  return `<svg viewBox="0 0 ${S} ${S}" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <rect width="${S}" height="${S}" fill="${bg}"/>${g}
+    <g stroke="${C.ink}" stroke-width=".5" opacity=".07">${tex}</g></svg>`;
+}
+
+/* ---------- catalogue ---------- */
+const products = [
+ {id:"HB-01",name:"Binakol Throw",origin:"Ilocos Norte",cat:"Blankets",price:2850,was:3200,
+  kind:"binakol",pal:[C.abaca,C.indigo,C.paper],weave:"Binakol"},
+ {id:"HB-02",name:"Abel Iloko Blanket",origin:"Vigan",cat:"Blankets",price:3400,
+  kind:"stripe",pal:[C.paper,C.indigo,C.madder],weave:"Warp stripe"},
+ {id:"HB-03",name:"Banig Floor Mat",origin:"Basey, Samar",cat:"Mats",price:1950,
+  kind:"banig",pal:[C.abaca,C.gold,C.paper],weave:"Tikog plait"},
+ {id:"HB-04",name:"Kalinga Table Runner",origin:"Lubuagan",cat:"Table",price:1200,
+  kind:"stripe",pal:[C.ink,C.madder,C.abaca],weave:"Warp stripe"},
+ {id:"HB-05",name:"Abaca Storage Basket",origin:"Bicol",cat:"Baskets",price:1650,
+  kind:"twill",pal:[C.abaca,"#C9B896",C.paper],weave:"Diagonal twill"},
+ {id:"HB-06",name:"Rattan Placemats, set of 4",origin:"Cebu",cat:"Table",price:890,
+  kind:"check",pal:[C.paper,"#B99B62",C.moss],weave:"Basket check"},
+ {id:"HB-07",name:"Bontoc Cushion Cover",origin:"Mountain Province",cat:"Cushions",price:750,was:950,
+  kind:"binakol",pal:[C.paper,C.madder,C.ink],weave:"Binakol"},
+ {id:"HB-08",name:"Ikat Wall Panel",origin:"Mindanao",cat:"Blankets",price:4200,
+  kind:"twill",pal:[C.deep,C.gold,C.abaca],weave:"Ikat twill"}
+];
+
+const peso = n => "₱" + n.toLocaleString("en-PH");
+const $ = s => document.querySelector(s);
+
+/* ---------- hero loom ---------- */
+(function(){
+  const svg = $("#loom"); let s="";
+  for(let x=0;x<=1400;x+=28) s+=`<line x1="${x}" y1="0" x2="${x}" y2="600"/>`;
+  for(let y=0,i=0;y<=600;y+=28,i++)
+    s+=`<line class="weft" x1="0" y1="${y}" x2="1400" y2="${y}" style="animation-delay:${i*.045}s"/>`;
+  svg.innerHTML = s;
+  $("#heroArt").innerHTML = weave("binakol",[C.abaca,C.indigo,C.paper]);
+})();
+
+/* ---------- grid + filters ---------- */
+let filter = "All";
+const cats = ["All", ...new Set(products.map(p=>p.cat))];
+
+function drawFilters(){
+  $("#filters").innerHTML = cats.map(c =>
+    `<button class="chip" data-cat="${c}" aria-pressed="${c===filter}">${c}</button>`).join("");
+}
+function drawGrid(){
+  const list = products.filter(p => filter==="All" || p.cat===filter);
+  $("#grid").innerHTML = list.length ? list.map((p,i)=>`
+    <article class="card" style="animation-delay:${i*.04}s">
+      <div class="card__art">${weave(p.kind,p.pal)}${p.was?'<span class="tag">Last few</span>':''}</div>
+      <h3>${p.name}</h3>
+      <p class="card__meta">${p.weave} · ${p.origin}</p>
+      <div class="card__foot">
+        <span class="price">${p.was?`<s>${peso(p.was)}</s>`:""}${peso(p.price)}</span>
+        <button class="add" data-add="${p.id}">Add to cart</button>
+      </div>
+    </article>`).join("")
+    : `<p class="empty">No pieces in this category yet. Try “All”.</p>`;
+}
+
+$("#filters").addEventListener("click", e=>{
+  const b = e.target.closest("[data-cat]"); if(!b) return;
+  filter = b.dataset.cat; drawFilters(); drawGrid();
+});
+$("#grid").addEventListener("click", e=>{
+  const b = e.target.closest("[data-add]"); if(!b) return;
+  add(b.dataset.add);
+});
+
+/* ---------- cart ---------- */
+let cart = [];   /* swap for localStorage / your API when you wire this up */
+
+function add(id){
+  const line = cart.find(l=>l.id===id);
+  line ? line.q++ : cart.push({id,q:1});
+  renderCart(); toast(products.find(p=>p.id===id).name + " added");
+}
+function setQty(id,d){
+  const line = cart.find(l=>l.id===id); if(!line) return;
+  line.q += d; if(line.q<1) cart = cart.filter(l=>l.id!==id);
+  renderCart();
+}
+function renderCart(){
+  const n = cart.reduce((s,l)=>s+l.q,0);
+  $("#cartCount").textContent = n;
+  $("#cartBody").innerHTML = cart.length ? cart.map(l=>{
+    const p = products.find(x=>x.id===l.id);
+    return `<div class="line">
+      <div class="line__art">${weave(p.kind,p.pal)}</div>
+      <div><div class="line__n">${p.name}</div>
+        <div class="qty">
+          <button data-q="-1" data-id="${p.id}" aria-label="Remove one ${p.name}">−</button>
+          <span>${l.q}</span>
+          <button data-q="1" data-id="${p.id}" aria-label="Add one ${p.name}">+</button>
+        </div></div>
+      <span class="line__p">${peso(p.price*l.q)}</span></div>`;
+  }).join("") : `<p class="empty" style="padding:4rem 0">Nothing here yet.<br>The shop is a few scrolls up.</p>`;
+
+  const sub = cart.reduce((s,l)=>s + products.find(p=>p.id===l.id).price*l.q, 0);
+  const ship = sub===0 ? 0 : (sub>=3000 ? 0 : 180);
+  $("#sub").textContent = peso(sub);
+  $("#ship").textContent = sub===0 ? "—" : (ship===0 ? "Free" : peso(ship));
+  $("#tot").textContent = peso(sub+ship);
+  $("#checkout").disabled = cart.length===0;
+}
+$("#cartBody").addEventListener("click", e=>{
+  const b = e.target.closest("[data-q]"); if(!b) return;
+  setQty(b.dataset.id, +b.dataset.q);
+});
+
+/* drawer */
+const drawer = $("#drawer"), scrim = $("#scrim");
+function openCart(){drawer.classList.add("open");scrim.classList.add("open");
+  drawer.setAttribute("aria-hidden","false");$("#closeCart").focus();}
+function closeCart(){drawer.classList.remove("open");scrim.classList.remove("open");
+  drawer.setAttribute("aria-hidden","true");$("#openCart").focus();}
+$("#openCart").addEventListener("click",openCart);
+$("#closeCart").addEventListener("click",closeCart);
+scrim.addEventListener("click",closeCart);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCart();});
+$("#checkout").addEventListener("click",()=>toast("Checkout goes here — wire it to your payment page"));
+
+/* toast */
+let tId;
+function toast(msg){
+  const t=$("#toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(tId); tId=setTimeout(()=>t.classList.remove("show"),2200);
+}
+
+drawFilters(); drawGrid(); renderCart();
+</script>
+</body>
+</html>
